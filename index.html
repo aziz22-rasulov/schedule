@@ -3,21 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мое Расписание на Неделю</title>
+  <title>Расписание на 2 недели (вечернее)</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #333;
-    }
-    .schedule {
+    body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+    h1, h2 { text-align: center; color: #333; }
+    .schedule { margin-bottom: 40px; }
+    .grid {
       display: grid;
       grid-template-columns: 60px repeat(7, 1fr);
       background: white;
@@ -25,84 +16,58 @@
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .schedule div {
-      border: 1px solid #e0e0e0;
-      padding: 8px;
-      font-size: 0.9em;
-      text-align: center;
-    }
+    .grid div { border: 1px solid #e0e0e0; padding: 8px; font-size: 0.9em; text-align: center; }
     .header { background: #4a90e2; color: white; font-weight: bold; }
     .time   { background: #fafafa; font-weight: bold; }
     .matan  { background: #ffe5e5; }
     .oop    { background: #e5f7ff; }
     .graphs { background: #fff7e5; }
     .quran  { background: #e5ffe5; }
-    .full-oop { background: #cceeff; }
+    .free   { background: #f9f9f9; }
   </style>
 </head>
 <body>
-  <h1>Мое Расписание на Неделю</h1>
+  <h1>Моё расписание на две недели (вечернее)</h1>
+  <!-- Неделя 1 -->
   <div class="schedule">
-    <div></div>
-    <div class="header">Понедельник</div>
-    <div class="header">Вторник</div>
-    <div class="header">Среда</div>
-    <div class="header">Четверг</div>
-    <div class="header">Пятница</div>
-    <div class="header">Суббота</div>
-    <div class="header">Воскресенье</div>
+    <h2>Неделя 1</h2>
+    <div class="grid">
+      <div></div><div class="header">Пн</div><div class="header">Вт</div><div class="header">Ср</div><div class="header">Чт</div><div class="header">Пт</div><div class="header">Сб</div><div class="header">Вс</div>
 
-    <div class="time">08:00-08:30</div>
-    <div class="quran">Коран (30 мин)</div>
-    <div class="quran">Коран (30 мин)</div>
-    <div class="quran">Коран (30 мин)</div>
-    <div class="quran">Коран (30 мин)</div>
-    <div class="quran">Коран (30 мин)</div>
-    <div class="quran">Коран (30 мин)</div>
-    <div class="quran">Коран (30 мин)</div>
+      <!-- 17:00-17:30 -->
+      <div class="time">17:00-17:30</div>
+      <div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div>
+      <!-- 17:30-19:00 -->
+      <div class="time">17:30-19:00</div>
+      <div class="matan">Матан</div><div class="graphs">Графы</div><div class="oop">ООП (весь вечер)</div><div class="matan">Матан</div><div class="graphs">Графы</div><div class="matan">Матан</div><div class="graphs">Графы</div>
+      <!-- 19:00-20:30 -->
+      <div class="time">19:00-20:30</div>
+      <div class="graphs">Графы</div><div class="matan">Матан</div><!-- среда полно--> <div class="matan">Матан</div><div class="oop">ООП</div><div class="matan">Матан</div><div class="oop">ООП</div><div class="matan">Матан</div>
+      <!-- 20:30-22:00 -->
+      <div class="time">20:30-22:00</div>
+      <div class="oop">ООП</div><div class="oop">ООП</div><div class="oop">ООП</div><div class="graphs">Графы</div><div class="oop">ООП</div><div class="graphs">Графы</div><div class="oop">ООП</div>
+      <!-- 22:00-22:30 -->
+      <div class="time">22:00-22:30</div>
+      <div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div>
+    </div>
+  </div>
+  <!-- Неделя 2 -->
+  <div class="schedule">
+    <h2>Неделя 2</h2>
+    <div class="grid">
+      <div></div><div class="header">Пн</div><div class="header">Вт</div><div class="header">Ср</div><div class="header">Чт</div><div class="header">Пт</div><div class="header">Сб</div><div class="header">Вс</div>
 
-    <div class="time">09:00-10:30</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="full-oop" style="grid-row: span 4;">Полный день ООП<br>09:00-17:00</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-
-    <div class="time">10:30-12:00</div>
-    <div class="graphs">Теория графов (1.5 ч)</div>
-    <div class="graphs">Теория графов (1.5 ч)</div>
-    <div class="graphs">Теория графов (1.5 ч)</div>
-    <div class="graphs">Теория графов (1.5 ч)</div>
-    <div class="graphs">Теория графов (1.5 ч)</div>
-    <div class="graphs">Теория графов (1.5 ч)</div>
-
-    <div class="time">12:00-13:00</div>
-    <div style="grid-column: 2 / 9;">Обеденный перерыв</div>
-
-    <div class="time">13:00-14:30</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="oop">ООП (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-    <div class="matan">Матан (1.5 ч)</div>
-
-    <div class="time">15:00-16:30</div>
-    <div class="oop">ООП (1.5 ч)</div>
-    <div class="oop">ООП (1.5 ч)</div>
-    <div class="oop">ООП (1.5 ч)</div>
-    <div class="oop">ООП (1.5 ч)</div>
-    <div class="oop">ООП (1.5 ч)</div>
-    <div class="oop">ООП (1.5 ч)</div>
-
-    <div class="time">16:30-17:00</div>
-    <div style="grid-column: 2 / 9;">Перерыв</div>
-
-    <div class="time">17:00+</div>
-    <div style="grid-column: 2 / 9;">Свободное время / Отдых</div>
+      <div class="time">17:00-17:30</div>
+      <div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div><div class="quran">Коран</div>
+      <div class="time">17:30-19:00</div>
+      <div class="graphs">Графы</div><div class="matan">Матан</div><div class="oop">ООП (весь вечер)</div><div class="graphs">Графы</div><div class="matan">Матан</div><div class="graphs">Графы</div><div class="matan">Матан</div>
+      <div class="time">19:00-20:30</div>
+      <div class="matan">Матан</div><div class="graphs">Графы</div><div class="matan">Матан</div><div class="oop">ООП</div><div class="graphs">Графы</div><div class="oop">ООП</div><div class="graphs">Графы</div>
+      <div class="time">20:30-22:00</div>
+      <div class="oop">ООП</div><div class="oop">ООП</div><div class="oop">ООП</div><div class="matan">Матан</div><div class="oop">ООП</div><div class="matan">Матан</div><div class="oop">ООП</div>
+      <div class="time">22:00-22:30</div>
+      <div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div><div class="free">Перерыв</div>
+    </div>
   </div>
 </body>
 </html>
