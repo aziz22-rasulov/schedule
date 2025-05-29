@@ -4,115 +4,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Учебное расписание</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .tabs { list-style: none; padding: 0; display: flex; border-bottom: 2px solid #ccc; }
-    .tabs li { margin-right: 10px; padding: 10px 15px; cursor: pointer; border: 1px solid transparent; border-top-left-radius: 5px; border-top-right-radius: 5px; }
-    .tabs li.active { background: #f0f0f0; border-color: #ccc; border-bottom-color: white; }
-    .tab-content { display: none; padding: 20px; border: 1px solid #ccc; border-top: none; }
-    .tab-content.active { display: block; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-    th { background-color: #f7f7f7; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .notes {
+      margin-top: 30px;
+      background: #eef6ff;
+      padding: 15px;
+      border-left: 4px solid #4a90e2;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
-  <h1>Учебное расписание</h1>
-  <ul class="tabs">
-    <li data-day="monday" class="active">Понедельник</li>
-    <li data-day="tuesday">Вторник</li>
-    <li data-day="wednesday">Среда</li>
-    <li data-day="thursday">Четверг</li>
-    <li data-day="friday">Пятница</li>
-    <li data-day="saturday">Суббота</li>
-    <li data-day="sunday">Воскресенье</li>
-  </ul>  <!-- Шаблон контента для каждого дня -->  <div id="monday" class="tab-content active">
-    <h2>Понедельник</h2>
+  <header>
+    <h1>Учебное расписание (на 14 дней)</h1>
+  </header>
+  <main>
+    <h2>Ежедневный план</h2>
     <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <!-- Копируем блок для остальных дней -->  <div id="tuesday" class="tab-content">
-    <h2>Вторник</h2>
-    <!-- Используйте ту же таблицу расписания -->
-    <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <div id="wednesday" class="tab-content">
-    <h2>Среда</h2>
-    <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <div id="thursday" class="tab-content">
-    <h2>Четверг</h2>
-    <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <div id="friday" class="tab-content">
-    <h2>Пятница</h2>
-    <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <div id="saturday" class="tab-content">
-    <h2>Суббота</h2>
-    <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <div id="sunday" class="tab-content">
-    <h2>Воскресенье</h2>
-    <table>
-      <tr><th>Время</th><th>Занятие</th></tr>
-      <tr><td>08:00–10:30</td><td>Матанализ: теория</td></tr>
-      <tr><td>10:45–13:15</td><td>Матанализ: практика</td></tr>
-      <tr><td>14:15–15:45</td><td>Теория графов</td></tr>
-      <tr><td>16:00–17:30</td><td>Практика графов</td></tr>
-      <tr><td>17:45–19:15</td><td>Data Science: программирование</td></tr>
-      <tr><td>19:30–20:30</td><td>Data Science: практика</td></tr>
-    </table>
-  </div>  <script>
-    const tabs = document.querySelectorAll('.tabs li');
-    const contents = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.day).classList.add('active');
-      });
-    });
-  </script></body>
+      <tr><th>Время</th><th>Занятие</th><th>Количество билетов</th></tr>
+      <tr><td>08:00–10:30</td><td>Матанализ: теория</td><td>~7 билетов</td></tr>
+      <tr><td>10:45–13:15</td><td>Матанализ: практика</td><td>решение задач</td></tr>
+      <tr><td>14:15–15:45</td><td>Теория графов: теория</td><td>~4 билета</td></tr>
+      <tr><td>16:00–17:30</td><td>Теория графов: практика</td><td>решение задач</td></tr>
+      <tr><td>17:45–19:15</td><td>Data Science: программирование</td><td>теория/код</td></tr>
+      <tr><td>19:30–20:30</td><td>Data Science: практика</td><td>упражнения</td></tr>
+    </table><div class="notes">
+  <strong>Примечания:</strong>
+  <ul>
+    <li>Всего 93 билета по матанализу → по ~7 в день за 14 дней</li>
+    <li>Всего 49 билетов по теории графов → по ~4 в день за 14 дней</li>
+    <li>Каждый день один и тот же ритм для формирования устойчивой привычки</li>
+  </ul>
+</div>
+
+  </main>
+</body>
 </html>
